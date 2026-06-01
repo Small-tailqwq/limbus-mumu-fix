@@ -14,7 +14,7 @@ $ScriptRoot = Split-Path -Parent $MyInvocation.MyCommand.Path
 $DataDir = "/sdcard/Android/data/$PackageName"
 $CatalogDir = "$DataDir/files/com.unity.addressables"
 
-$MuMuPorts = @(16384, 7555, 7556, 7557, 7558, 16416, 16448, 16480, 16512)
+$MuMuPorts = @(16416, 16448, 16480, 16512, 7555, 7556, 7557, 7558, 16384)
 
 # --- Find ADB ---
 function Get-AdbPath {
