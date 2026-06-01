@@ -41,6 +41,34 @@ split_UnityDataAssetPack.apk/assets/aa/catalog.hash
 
 Limbus Company v1.106.x 升级到了 Unity 6。MuMu 的 Android 12 EGL/Vulkan 模拟层与 Unity 6 的图形初始化不兼容。Addressables 运行时 catalog 路径位于 split APK 内部，触发了黑屏。将相同的数据写入持久缓存，绕过有问题的路径即可解决。
 
+## 官方修复
+
+生不逢时。这个社区修复方案即将完成之际，Project Moon 也发布了官方修复公告：
+
+> Hello, this is Project Moon.
+>
+> We would like to inform you that, regarding the previously announced inaccessibility issue on AOS, we have identified the cause of the error and developed a fix.
+>
+> We are currently preparing the game build with the completed fix. The update will be deployed once the store review process is complete.
+>
+> [ Issue Cause ]
+> - There was an issue in which the order of certain code logic was not clearly executed during the resource-loading process required to run the Limbus Company application.
+> - As a result, on certain devices, the application was unable to complete loading and entered indefinite loading.
+>
+> [ Fix Details ]
+> - We have isolated the cause of the issue through close cooperation between our internal team and Unity's technical support team.
+> - We have supplemented the design logic so that resources can now be loaded properly. We have also confirmed that the issue no longer persists on our internal testing devices.
+>
+> [ Fix Schedule ]
+> - We will prepare a new application build with the fix as quickly as possible. The submission process is underway for market review.
+> - Once the market review has been completed, we will distribute the update without delay so that Managers using AOS can play the game normally.
+>
+> ※ We will inform you via a separate notice once the market review is complete and clearance for the game update is obtained.
+>
+> Once again, we sincerely apologize for the inconvenience.
+
+社区修复在官方更新到来之前填补了空白。如果官方更新已推送至你的设备，建议直接使用官方版本。
+
 ## 选项
 
 | 参数 | 说明 |

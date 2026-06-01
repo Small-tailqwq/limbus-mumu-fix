@@ -41,6 +41,34 @@ Two files. From the APK itself. That's it.
 
 Limbus Company v1.106.x upgraded to Unity 6. MuMu's Android 12 EGL/Vulkan emulation layer is incompatible with Unity 6's graphics initialization. The Addressables runtime catalog path inside the split APK triggers the black screen. Seeding the same bytes as persistent cache bypasses the problematic path.
 
+## Official Fix
+
+Born at the wrong time. Just as this community fix was being finalized, Project Moon released an official fix announcement:
+
+> Hello, this is Project Moon.
+>
+> We would like to inform you that, regarding the previously announced inaccessibility issue on AOS, we have identified the cause of the error and developed a fix.
+>
+> We are currently preparing the game build with the completed fix. The update will be deployed once the store review process is complete.
+>
+> [ Issue Cause ]
+> - There was an issue in which the order of certain code logic was not clearly executed during the resource-loading process required to run the Limbus Company application.
+> - As a result, on certain devices, the application was unable to complete loading and entered indefinite loading.
+>
+> [ Fix Details ]
+> - We have isolated the cause of the issue through close cooperation between our internal team and Unity's technical support team.
+> - We have supplemented the design logic so that resources can now be loaded properly. We have also confirmed that the issue no longer persists on our internal testing devices.
+>
+> [ Fix Schedule ]
+> - We will prepare a new application build with the fix as quickly as possible. The submission process is underway for market review.
+> - Once the market review has been completed, we will distribute the update without delay so that Managers using AOS can play the game normally.
+>
+> ※ We will inform you via a separate notice once the market review is complete and clearance for the game update is obtained.
+>
+> Once again, we sincerely apologize for the inconvenience.
+
+This community fix filled the gap until the official update arrives. If the official update has already reached your device, using the official version is recommended.
+
 ## Options
 
 | Option | Description |
