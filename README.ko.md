@@ -1,5 +1,7 @@
 # Limbus Company MuMu 검은화면 수정 도구
 
+[English](README.en.md) · [中文](README.md) · [日本語](README.ja.md) · [한국어](README.ko.md)
+
 Limbus Company v1.106.x의 MuMu Android 에뮬레이터 검은화면 문제를 해결합니다.
 
 **외부 의존성 제로.** 설치된 APK에서 두 개의 catalog 파일을 직접 추출합니다 — 다운로드 불필요, 페이로드 디렉토리 생성 없음.

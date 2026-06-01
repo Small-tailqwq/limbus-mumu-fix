@@ -1,5 +1,7 @@
 # Limbus Company MuMu ブラックスクリーン修正ツール
 
+[English](README.en.md) · [中文](README.md) · [日本語](README.ja.md) · [한국어](README.ko.md)
+
 Limbus Company v1.106.x の MuMu Android エミュレータにおけるブラックスクリーン問題を修正します。
 
 **外部依存ゼロ。** インストール済みの APK から 2 つの catalog ファイルを直接抽出します — ダウンロード不要、ペイロードディレクトリも生成しません。

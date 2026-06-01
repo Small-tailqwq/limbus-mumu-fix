@@ -1,5 +1,7 @@
 # Limbus Company MuMu Black Screen Fix
 
+[English](README.en.md) · [中文](README.md) · [日本語](README.ja.md) · [한국어](README.ko.md)
+
 Fix for the Limbus Company v1.106.x black screen on MuMu Android emulator.
 
 **Zero external dependencies.** Extracts two catalog files from the installed APK — nothing to download, no payload directory.

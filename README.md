@@ -1,5 +1,7 @@
 # Limbus Company MuMu 黑屏修复工具
 
+[English](README.en.md) · [中文](README.md) · [日本語](README.ja.md) · [한국어](README.ko.md)
+
 修复 Limbus Company v1.106.x 在 MuMu 安卓模拟器上的黑屏问题。
 
 **零外部依赖。** 直接从已安装的 APK 中提取两个 catalog 文件 —— 无需下载任何内容，不产生 payload 目录。
