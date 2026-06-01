@@ -1,0 +1,13 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary
+*.tmp
+*.log
+backups/
+payload/
+
+# IDE
+.idea/
+.vscode/
