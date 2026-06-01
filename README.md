@@ -54,7 +54,7 @@ adb shell "rm -rf /sdcard/Android/data/com.ProjectMoon.LimbusCompany/files/com.u
 
 ## 致谢
 
-思路来源：小黑盒平台 [@Cangzhou](https://www.xiaoheihe.cn) 用户，其提供的修复包是开展本次 debug 分析的关键起点。
+思路来源：小黑盒平台 [Cangzhou](https://www.xiaoheihe.cn) 用户，其提供的修复包是开展本次 debug 分析的关键起点。
 
 ## 许可证
 
