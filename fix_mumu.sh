@@ -101,9 +101,23 @@ else
 fi
 
 if [[ -z "$TARGET_SERIAL" ]]; then
-    echo -e "${RED}ERROR: No MuMu device with $PACKAGE installed.${NC}"
-    echo "  Make sure MuMu is running and the game is installed."
-    exit 1
+    echo -e "\033[0;33mWARNING: Could not auto-detect MuMu device.\033[0m"
+    read -p "  Enter MuMu ADB port manually (e.g. 16384), or press Enter to skip: " MANUAL_PORT
+    if [[ -n "$MANUAL_PORT" ]]; then
+        $ADB connect "127.0.0.1:${MANUAL_PORT}" 2>/dev/null || true
+        while IFS=$'\t' read -r serial _; do
+            serial="${serial//[[:space:]]/}"
+            if [[ -z "$serial" ]]; then continue; fi
+            if $ADB -s "$serial" shell "pm path $PACKAGE" 2>/dev/null | grep -q "$PACKAGE"; then
+                TARGET_SERIAL="$serial"
+                break
+            fi
+        done < <($ADB devices | grep -w 'device$')
+    fi
+    if [[ -z "$TARGET_SERIAL" ]]; then
+        echo -e "${RED}ERROR: No MuMu device found. Make sure MuMu is running and the game is installed.${NC}"
+        exit 1
+    fi
 fi
 echo "[*] Target: $TARGET_SERIAL"
 

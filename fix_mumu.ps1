@@ -70,9 +70,23 @@ else {
 }
 
 if (-not $Serial) {
-    Write-Host "ERROR: No MuMu device with $PackageName installed." -ForegroundColor Red
-    Write-Host "  Make sure MuMu is running and the game is installed."
-    exit 1
+    Write-Host "WARNING: Could not auto-detect MuMu device." -ForegroundColor Yellow
+    $manualPort = Read-Host "  Enter MuMu ADB port manually (e.g. 16384), or press Enter to skip"
+    if ($manualPort) {
+        Invoke-AdbIgnore connect "127.0.0.1:$manualPort"
+        $devices = Invoke-Adb devices | Where-Object { $_ -match '^\S+\s+device$' } | ForEach-Object { ($_ -split '\s+')[0] }
+        foreach ($d in $devices) {
+            $check = & $AdbPath -s $d shell "pm path $PackageName" 2>&1 | Out-String
+            if ($check -match $PackageName) {
+                $Serial = $d
+                break
+            }
+        }
+    }
+    if (-not $Serial) {
+        Write-Host "ERROR: No MuMu device found. Make sure MuMu is running and the game is installed." -ForegroundColor Red
+        exit 1
+    }
 }
 Write-Host "[*] Target: $Serial"
 
