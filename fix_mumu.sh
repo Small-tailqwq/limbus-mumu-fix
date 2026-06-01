@@ -80,6 +80,7 @@ echo "[*] Using adb: $ADB"
 
 # --- Start ADB and connect to known MuMu ports ---
 $ADB start-server
+echo "[*] Connecting to MuMu ADB ports..."
 
 for port in "${MUMU_PORTS[@]}"; do
     $ADB connect "127.0.0.1:${port}" 2>/dev/null || true

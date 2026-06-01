@@ -49,6 +49,7 @@ function Invoke-AdbIgnore {
 
 # --- Start ADB, connect ---
 Invoke-AdbIgnore start-server
+Write-Host "[*] Connecting to MuMu ADB ports..."
 foreach ($port in $MuMuPorts) {
     Invoke-AdbIgnore connect "127.0.0.1:$port"
 }
@@ -144,7 +145,7 @@ if ($NoLaunch) {
 }
 else {
     Write-Host "[*] Launching game..."
-    & $AdbPath -s $Serial shell "monkey -p $PackageName -c android.intent.category.LAUNCHER 1" 2>&1 | Out-Null
+    & $AdbPath -s $Serial shell "monkey -p $PackageName -c android.intent.category.LAUNCHER 1" 2>$null | Out-Null
     Write-Host ""
     Write-Host "Done. The game should reach the title screen." -ForegroundColor Green
 }
